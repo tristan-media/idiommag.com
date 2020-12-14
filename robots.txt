@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /2010/06/greg-afinogenov-is-wrong-about-everything
+Disallow: /2010/06/greg-afinogenov-is-wrong-about-everything/
+

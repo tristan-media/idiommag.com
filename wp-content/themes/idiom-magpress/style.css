@@ -1,0 +1,36 @@
+/*
+Theme Name: Idiom Magazine
+Template: magpress
+*/
+
+@import url(../magpress/style.css); 
+
+#slidedeck_widget-6 { list-style-type:none; padding:0; margin:0; width:600px; float:left; }
+#text-7 { list-style-type:none; float:right; }
+.skin-image_caption_bottom .sd-node-caption { padding-bottom:10px !important; }
+.skin-image_caption_bottom ul.sd-node-nav-primary { bottom:14px !important; }
+a, a:link, a:visited { color:#2361A1; }
+a.action-link, a.action-link:hover { background:none; padding:0; text-transform:none; }
+#culturepundits-adheader { display:block; text-align: center; margin-bottom: 40px; }
+.post-image.in-post, .dd_post_share { display:none !important; }
+.copy blockquote { background:none !important; border: none; font-size: 1.1em; }
+.wp-caption { border: 0; background: none; }
+.wp-caption img { margin: auto; }
+.wp-caption p.wp-caption-text { font-style: normal; }
+body { background: none; color: black; }
+.section-title, h4.widgettitle { border-bottom: none; }
+.post-date { border: none; }
+h2.post-title { margin-bottom: 0 !important; font-size: 19px; }
+h2.archive-title { margin-bottom: 12px !important; font-size: 24px; }
+.blog-main-post-container h5.date, h5.date { margin: 5px 0 !important; }
+#footer { padding: 4px; }
+.footer-text { padding: 10px; }
+body.author { overflow:visible; }
+#content-container, #header-container, #footer-container { width:960px; }
+ul.widget-list li.widget.readability { padding: 0 0 10px !important; }
+sup { vertical-align: super !important; font-size: smaller !important; }
+li.donate .textwidget { background-color: #ffe761; padding: 5px 10px; } 
+ul.widget-list li.widget ul.tweets li a { display: inline }
+ul.widget-list li.widget ul.tweets li a.timesince { display: block }
+ul.tags { width: 500px; }
+

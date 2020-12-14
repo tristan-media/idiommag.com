@@ -1,0 +1,591 @@
+/*
+Theme Name: mag.Press
+Design Studio: Obox Design http://www.obox-design.com/
+Version: 1.1.7
+Author: Obox Design
+Author URI: http://www.obox-design.com/
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*- RESET - Courtesy of Eric Meyer's CSS Reset Awesomeness: http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ ---*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td{
+margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+body {line-height: 1; color: black; background: white;}
+ol, ul {list-style: none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- SETUP STD CLASSES -----------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+body{margin: 0px; padding: 0px; font-size: 13px; font-family: Arial, Helvetica, sans-serif; line-height: 1.6em; overflow-x: hidden;
+		 background: #fff url(images/layout/texture.png) repeat; color: #595959;}
+
+h1, h2, h3, h4, h5, h6{color: #333;}
+h1{font-size: 35px; }
+h2{font-size: 25px; font-weight: bold;}
+h3{padding-bottom: 5px; margin-bottom: 5px; font-weight: bold;}
+h4{font-size: 14px; font-weight: bold; margin-bottom: 8px;}
+h5{font-size: 12px; font-weight: bold; margin-bottom: 8px;}
+h6{font-size: 10px; font-weight: bold; margin-bottom: 8px;}
+
+p{margin-bottom: 12px;}
+textarea, input{font-family: Arial, Helvetica, sans-serif; font-size: inherit; padding: 8px; background: #fff; border: 1px solid #ccc; color: #595959;}
+	input[type=button], input[type=submit]{padding: 5px; font-size: 13px; font-weight: bold; background: #39c; border: none; color: #fff; cursor: pointer;}
+	input[type=button]:hover, input[type=submit]:hover{background: #111; color: #fff}
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- GLOBAL CLASSES --------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*--- Links ---*/
+a{text-decoration: none; color: #39c;}
+a:hover{color: #000; text-shadow: none;}
+	
+/*--- Layouts ---*/
+.no_bg{background-image: none;}
+.clearboth{clear: both}
+.floatleft{float: left;}
+.floatright{float: right;}
+.floatright{float:right;}
+.no_display{display: none;}
+
+strong{font-weight: bold;}
+em{font-style: italic;}
+
+.alignleft{float: left; margin: 10px 20px 10px 0px !important;}
+.alignright{float: right; margin: 10px 0px 10px 20px !important;}
+.aligncenter{text-align: center !important; margin: 0px 0px 10px 0px !important;}
+
+.wp-caption{padding: 5px; width: auto !important; background: #f1f1f1; border: 1px solid #ccc;}
+	.wp-caption img{display: block; margin-bottom: 5px; padding: 0px; border: none !important;}
+	.wp-caption p.wp-caption-text{clear: both; text-align: center; margin: 0px; padding: 0px; font-style: italic; font-size: 11px !important; color: #595959;}
+
+h5.date{margin: 0px 0px 5px; padding: 0px; font-weight: lighter; font-size: 10px; line-height: 1.2em; text-transform: uppercase; color: #999;}
+.section-title{clear: both; padding: 5px 0px; margin: 0px 0px 12px; text-transform: uppercase; font-size: 10px; font-weight: bold; color: #111; border-top: 3px solid #111; border-bottom: 1px solid #ccc;}
+	.section-title a{color: #111;}
+	.section-title a:hover{color: #39c;}
+	
+
+/*-------------------------------------------------------------------------------------------*/
+/*- GENERAL LAYOUT --------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+#header-container{width: 940px; padding-top: 30px; margin: auto;}
+	#header{margin-bottom: 30px;}
+	
+#content-container{width: 940px; margin: auto;}
+	#left-column{float: left; width: 620px;}
+	#right-column{float: right; width: 300px;}
+	#full-width{width: 940px;}
+	#gallery{width: 940px;}
+
+#footer-container{width: 940px; margin: auto; background: #111;}
+	#footer{padding: 20px;}
+	
+
+/*-------------------------------------------------------------------------------------------*/
+/*- HEADER ----------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+	/*--------------------------*/
+	/*- HEADER ROW -------------*/
+	.logo{clear: both;}
+		.logo h1{margin: 0px 0px 10px; padding: 0px;}
+		
+
+	/*--------------------------*/
+	/*- CATEGORY MENU ----------*/
+	ul#nav{clear: both; border-top: 1px solid #ccc; border-bottom: 5px solid #111;}
+		ul#nav li{float: left; position: relative;}
+			ul#nav li a{display: block; padding: 5px 8px 8px; margin: 0px 4px 0px 0px; color: #111; border-top: 3px solid #fff;}
+			ul#nav li a:hover{margin-top: -1px; color: #39c; border-top: 4px solid #111;}
+
+
+		/*--------------------------*/
+		/*- SUB MENU ---------------*/
+		ul#nav ul.sub-menu{display: none; position: absolute; top: 39px; left: 0px; z-index: 2; background: #111;}
+			ul#nav ul.sub-menu li:last-child{border-bottom: none;}
+			ul#nav li:last-child ul.sub-menu{left: auto; right: 0px;}
+			ul#nav ul.sub-menu ul{left: 162px; top: 0px;}
+			ul#nav li:last-child ul.sub-menu ul{left: auto; right: 162px; top: 0px;}
+
+			ul#nav ul.sub-menu li{width: 160px; border-bottom: 1px solid #333;}
+			ul#nav ul.sub-menu li a{display: block; padding: 3px 5px; margin: 5px; line-height: 1.5em; color: #fff; border-top: none;}
+			ul#nav ul.sub-menu li a:hover{background: #fff; color: #111;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- HOME PAGE STYLING -----------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+	/*-------------------------------------------*/
+	/*- SLIDER ----------------------------------*/
+	.slider{position: relative; overflow: auto; padding-bottom: 30px;}
+		
+		/*---------------------*/
+		/*- SLIDER IMAGES -----*/
+		.gallery-container{float: left; width: 620px; height: 580px; position: relative;}
+			.gallery-container li{position: absolute; top: 0px; left: 0px; z-index: 1px;}
+			.gallery-image{display: block; height: 340px; overflow: hidden;}
+			.gallery-image img{display: block; margin: auto;}
+			.gallery-container a {display: block; width: 620px;}
+			.gallery-container a img{position: relative; margin: auto;}
+		
+		/*---------------------*/
+		/*- SLIDER BUTTONS ----*/
+		.slider .next, .slider .previous{display: block; width: 19px; height: 26px; position: absolute; top: 42%; text-indent: -999px; z-index: 10; overflow: hidden; background: url(images/layout/sprite.png) no-repeat;}
+			.slider .previous{left: 0px; background-position: 0px 0px;}
+			.slider .next{left: 601px; background-position: -129px -0px;}
+			.slider .previous:hover{background-position: 0px -55px;}
+			.slider .next:hover{background-position: -129px -55px;}
+			
+		/*---------------------*/
+		/*- SLIDER DOTS -------*/
+		.slider-dots{margin-bottom: 20px; overflow: auto;}
+			.slider-dots .dot{float: left; display: block; width: 8px; height: 8px; margin-right: 10px; overflow: hidden; text-indent: -9999px; background: url(images/layout/sprite.png) -18px -136px no-repeat;}
+			.slider-dots .dot:hover, .slider-dots .dot-selected{background-position: 0px -136px;}
+		
+			
+		/*---------------------*/
+		/*- SLIDER COPY -------*/
+		.slider .copy{float: right; width: 300px;}
+			.slider .copy ul{list-style: none; margin: 0px;}
+			.slider .post-title{line-height: 1.1em; font-size: 25px; font-weight: lighter;}
+
+
+	/*----------------------------*/
+	/*- THREE COLUMN -------------*/
+	.three-column{clear: both; margin-bottom: 20px; overflow: auto;}
+		.three-column li{float: left; width: 190px; margin-right: 25px;}
+		.three-column li:nth-child(3n+3){margin-right: 0px;}
+		.three-column .post-title{font-size: 15px;}
+		.three-column .post-image{height: auto; margin-bottom: 10px;}
+		
+		
+	/*----------------------------*/
+	/*- TWO COLUMN ---------------*/
+	.two-column{clear: both; margin-bottom: 20px; overflow: auto;}
+		.two-column li.column{float: left; width: 300px; margin-right: 20px;}
+		.two-column li.column:last-child{margin-right: 0px;}
+			.two-column li li{overflow: auto; padding: 10px 0px; margin: 0px; border-bottom: 1px dotted #ddd;}
+			.two-column li li:first-child{padding-top: 0px;}
+			.two-column li li:last-child{border-bottom: none;}
+				.two-column .post-image{float: left; margin: 0px 20px 0px 0px; overflow: hidden;}
+				.two-column .post-title{font-size: 15px; margin: 0px; padding: 0px;}
+				.two-column .date{margin: 0px; padding: 0px;}
+				
+				
+	/*----------------------------*/
+	/*- ONE COLUMN ---------------*/
+	.one-column{clear: both; margin-bottom: 20px; overflow: auto;}
+		.one-column li{overflow: auto; padding: 10px 0px; margin: 0px; border-bottom: 1px dotted #ddd;}
+		.one-column li:first-child{padding-top: 0px;}
+		.one-column li:last-child{border-bottom: none;}
+			.one-column .post-image{float: left; margin: 0px 20px 0px 0px; overflow: hidden;}
+			.one-column .post-title{font-size: 15px;}
+			.one-column .date{margin: 0px; padding: 0px;}
+	
+	
+	/*----------------------------*/
+	/*- ONE COLUMN LARGE ---------*/
+	.blog-main-post-container li{padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dotted #ddd;}
+		.blog-main-post-container li:last-child{border-bottom: none; padding-bottom: 0px;}
+		.blog-main-post-container .post-image{float: right; height: auto; margin: 0px 0px 10px 10px;}
+			.blog-main-post-container .post-image img{width: 300px;}
+		.blog-main-post-container .post-title{margin-bottom: 10px;}
+		.blog-main-post-container .date{border: none; margin: 0px 0px 10px !important; padding: 0px !important;}
+		.blog-main-post-container .copy{padding-top: 0px; margin-top: 0px;}
+	
+			
+	/*----------------------------*/
+	/*- ARTICLE LIST (NO META) ---*/
+	.article-list a{font-weight: bold; color: #333;}
+	.article-list a:hover{color: #39c;}
+
+
+	/*--------------------------*/
+	/*- RELATED GALLERIES ------*/
+	.related-galleries{ overflow: auto; margin-bottom: 30px;}
+		.related-galleries li{float: left; width: 95px; margin: 0px 10px 10px 0px;}
+		.related-galleries li:nth-child(6n+6){margin-right: 0px;}
+			.related-galleries li .gallery-image{display: block; width: 95px; height: 75px; overflow: hidden;}
+			
+			
+	/*--------------------------------------------------------*/
+	/*- PAGINATION -------------------------------------------*/
+	.pagination{padding: 0px; margin-bottom: 30px; overflow: hidden; border-top: 3px solid #111; text-transform: uppercase; font-size: 10px; font-weight: bold;}
+		.pagination li{float: left; margin: 0px; padding: 0px;}
+			.pagination li a{display: block; padding: 4px 6px; color: #111;}
+			.pagination li a:hover, .pagination li a.selected-page{background: #f1f1f1; border-bottom: 3px solid #111; color: #777;}
+
+
+	/*--------------------------------------------------------*/
+	/*- ACTION LINK ------------------------------------------*/
+	.continue-reading{padding: 0px; margin: 0px;}
+		a.action-link{padding: 4px 8px; background: #111; color: #fff; text-transform: uppercase; font-size: 10px; font-weight: bold;}
+			a.action-link:hover{background: #39c;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- POSTS CLASSES ---------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+	/*-----------------------------*/
+	/*- NEXT - PREV POST NAV ------*/
+	.next-prev-post-nav{margin-bottom: 10px; overflow: hidden; background: #f1f1f1; border-top: 3px solid #111; border-bottom: 1px solid #ccc;}
+		.next-prev-post-nav li{float: left; width: 289px; padding: 4px 10px 5px; text-align: right;}
+		.next-prev-post-nav li:first-child{border-right: 1px solid #ccc; text-align: left;}
+			.next-prev-post-nav li a{font-weight: bold; font-size: 10px; text-transform: uppercase; color: #111;}
+			.next-prev-post-nav li a:hover{color: #39c;}
+			.next-prev-post-nav li p{padding: 0px; margin: 0px; font-size: 12px; line-height: 1.6em; color: #777;}
+	
+	/*-----------------------------*/
+	/*- RELATED / RECENT SLIDER ---*/
+	.post-slider{padding: 0px; margin: 0px 0px 0px; background: #f1f1f1; border-top: 3px solid #111;}
+		.post-slider ul{overflow: hidden; padding: 0px; margin: 0px;}
+		.post-slider ul li{float: left; width: 167px; padding: 10px; border-right: 1px solid #ccc; overflow: hidden;}
+		.post-slider ul li:last-child{border-right: none;}
+			.post-slider ul li img{float: left; display: block; margin-right: 10px;}
+			.post-slider ul li a.post-title{font-size: 12px; color: #595959; line-height: 1.2em;}
+			.post-slider ul li a.post-title:hover{color: #111;}
+		
+
+	/*- RESET SOME CLASSES FOR THE COPY AFTER CLEARING EVERYTHING AT THE TOP OF THE CSS  -*/
+	.copy{margin-bottom: 0px;}
+	.copy ol, .copy ul{list-style: disc; margin: 0px 0px 15px 18px; line-height: 22px;}
+	.copy ol{list-style: decimal;}
+	.copy code, .copy pre{}
+	.copy img{display: block;}
+	.copy h2{font-weight: lighter; margin-bottom: 15px;}
+	.copy h3{}
+	.copy blockquote{padding: 10px 10px 1px 30px; margin: 10px 0px 10px 0px; font-size: 17px; line-height: 1.6em; background: url(images/layout/sprite.png) -480px -516px no-repeat; border-bottom: 1px dotted #ddd; color: #888;}
+							
+
+	/*------------------------------*/
+	/*- POST PAGE POST CONTAINER ---*/
+	.post-title{margin: 0px 0px 10px; padding: 0px; font-weight: bold;}
+	h2.post-title{font-size: 26px; line-height: 1.3em;}
+		.post-title a{color: #333;}
+		.post-title a:hover{color: #39c;}
+	.post-date{padding: 8px 0px !important; margin-bottom: 20px !important; border-bottom: 1px solid #ccc;  border-top: 1px solid #ccc;}
+					
+	.post{}
+	.post-image.in-post{float: right; height: auto; margin: 0px 0px 10px 10px; border: 1px solid #ccc;}
+		.post-image.in-post img{border: 5px dotted #ddd;}
+	#left-column .post:last-child{}
+	
+	
+	/*------------------------------*/
+	/*- POST PAGE META -------------*/
+	.post-meta{padding: 10px; margin: 20px 0px 30px; background: #f1f1f1; border-bottom: 1px solid #ccc; border-top: 3px solid #111;}
+		.post-meta li{list-style: none;}
+	
+		/*-------------------------*/
+		/*- SOCIAL ----------------*/
+		.social{float: right; width: 290px; padding: 0px; margin: 0px !important; overflow: auto; list-style: none; font-size: 10px; text-transform: uppercase;}
+			.social li{float: right; margin: 0px 0px 0px 10px; list-style: none;}
+			.social li:last-child{margin-bottom: 0px;}
+			.social li iframe{float: right;}
+			.social li.tweet a{float: right;}
+		
+		
+		/*------------------------------------*/
+		/*- TAGS -----------------------------*/
+		ul.tags{float: left; width: 290px; margin: 0px; overflow: hidden;}
+			ul.tags li{float: left; margin-right: 5px;}
+			ul.tags strong{font-weight: bold; color: #000;}
+			
+			
+		/*----------------------*/
+		/*- AUTHOR META AREA ---*/
+		.author{clear: both; overflow: hidden; margin-bottom: 30px;}
+		.author-avatar{float: left; position: relative; margin-right: 20px;}
+		.author-details h4{padding: 0px; margin: 0px 0px 5px; line-height: normal;}
+				.author-details h4 a{display: block; margin-top: 3px; font-size: 14px; font-weight: bold;}
+	
+	
+	/*------------------------------------*/
+	/*- POST PAGE WP GALLERY -------------*/
+	dl.gallery-item{float: left; padding: 10px; margin: 0px 16px 8px 0px; position: relative; background: #000; border: 3px solid #333; color: #ccc;}
+	dt.gallery-icon img{overflow: hidden; border: 3px solid #fff;}
+	dd.gallery-caption{padding: 0px; margin-top: 10px; font-size: 11px;}
+	div[id^='gallery-']{margin: none;}
+	div[id^='gallery-'] .gallery-item {margin-top: none; width: 154px !important; }
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- COMMENTS --------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.comments{width: 620px;}
+ul.comment-container{width: 620px;}
+	#full-width ul.comment-container{}
+	li.comment{overflow: hidden; padding: 20px 0px; margin: 0px; position: relative; border-bottom: 1px dotted #ddd;}
+	
+		.comment-avatar{float: left;}
+			.comment-avatar img{display: block; width: 50px; height: 50px;}
+			
+		.comment h5.date{ position: absolute; top: 20px; right: 0px;}
+			.comment h5.date a{}
+			.comment h5.date a:hover{}
+			
+		.comment h4.comment-name{color: #39c;}
+		
+		.reply-to-comment{}
+		.reply-to-comment:hover{}
+
+		.comment-post{margin-left: 70px;}
+		
+	li.comment:first-child{padding-top: 10px;}
+	li.comment:last-child{border-bottom: none;}
+	
+
+	/*--------------------------------------------------------*/
+	/*- THREADED COMMENTS - ITS TIME TO THREAD THIS BEAST ----*/
+	.threaded-comments{clear: both; margin: 20px 0px 0px 70px; border: 1px solid #ccc;}
+		.threaded-comments li.comment{}
+		.threaded-comments li.comment:last-child{border-bottom: none;}
+		.threaded-comments .comment-meta{}
+			.threaded-comments h5.date{right: 20px;}
+		.threaded-comments .comment-post{padding: 0px 20px; margin: 0px;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- POST A COMMENT --------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.logged-in-as{width: 296px; padding: 0px 0px 0px 23px; margin-bottom: 15px; background: url(images/layout/sprite.png) -485px 5px no-repeat;}
+
+.comment-form-content{width: 620px; margin-bottom: 40px; overflow: hidden;}
+	.comment-form-content p{margin: 0px;}
+	.comment_form input[type=text]{clear: both; width: 400px; padding: 8px; margin: 0px 0px 10px; font-size: 13px; line-height: 15px; background: #fff; border: 1px solid #ccc; color: #595959;}
+						
+	.comment_form textarea{clear: both; width: 400px; height: 220px; padding: 8px; margin: 0px 0px 10px; font-size: 13px; line-height: 15px; background: #fff; border: 1px solid #ccc; color: #595959;}
+
+	.checkbox{padding: 0px 0px 10px; margin: 0px 0px 10px 0px;}
+	input.submit_button{clear: both; padding: 5px; font-size: 13px; font-weight: bold; background: #39c; border: none; color: #fff; cursor: pointer;}
+		input.submit_button:hover{background: #111; color: #fff}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- GALLERY PAGES ---------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+ul.gallery_list{clear: both; margin-top: -29px;}
+	ul.gallery_list:nth-of-type(4){margin-right: 0px;}
+	li.gallery_description{float: left; width: 335px; height: 130px; padding: 20px; margin: 0px 1px 1px 0px; background: #111;}
+		li.gallery_description h1{line-height: 38px; margin: 0px 0px 10px; color: #fff;}
+		li.gallery_description p{color: #999;}
+	li.gallery_image{float: left; width: 187px; height: 170px; margin: 0px 1px 1px 0px; overflow: hidden; text-decoration: none;}
+		li.gallery_image a{position: relative; text-decoration: none; display: block; width: 191px; height: 191px; overflow: hidden;}
+			li.gallery_image a img{position: absolute; z-index: 1; margin: auto;}
+			span.gallery-image-overlay{display: none; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
+			li.gallery_image a:hover span.gallery-image-overlay{display: block; position: absolute; z-index: 2; top: 0px; left: 0px; width: 192px; height: 192px; background: rgba(0, 0, 0, 0.6); text-indent: -9999px;
+																	text-decoration: none;}
+			li.gallery_image a:hover span.gallery-image-overlay span.gallery_name{padding: 20px; display: block; z-index: 3; color: #fff; text-indent: 0px; line-height: 22px;}
+			li.gallery_image a:hover span.gallery-image-overlay span.gallery_name span.gallery-date{display: block; color: #ccc; font-size: 10pt; font-style: italic;}
+			li.gallery_image a:hover, li.gallery_image a:hover span{text-decoration: none;}
+	
+
+/*-------------------------------------------------------------------------------------------*/
+/*- ARCHIVES --------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+ul.archives_list{width: auto;}
+ul.archives_list li{padding: 20px 0px; margin: 0px; border-bottom: 1px dotted #ddd;}
+	.archives_list li .archive-post-image{float: left; width: 50px; height: 50px; margin-right: 10px; position: relative; overflow: hidden;}
+		.archives_list li .archive-post-image img{display: block; position: relative;}
+	.archives_list li a{font-weight: bold; font-size: 15px;}
+	.archives_list li .comment-count{margin-left: 20px; font-weight: lighter; color: #999; font-size: 11px;}
+	.archives_list .date{display: block; margin-right: 20px; font-size: 10px; text-transform: uppercase; color: #999;}
+		ul.archives_list .date sup{position: relative; top: -3px; text-transform: lowercase; font-size: 8px;}
+		ul.archives_list .label{float: right; display: inline-block;}
+		ul.archives_list .label a{font-weight: lighter; color: #999; font-size: 11px;}
+		.archives_list li .comment-count:hover, ul.archives_list .label :hover{color: #111;}
+
+.archives_list li:first-child{}
+.archives_list li:last-child{ margin-bottom: 30px;}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- ADVERTS ---------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+li.widget .advert{float: left; margin-right: 50px;}
+	li.widget .advert:nth-child(2n+2){margin-right: 0px;}
+	li.widget .advert a, li.widget .advert img{}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/*- RIGHT COLUMN ----------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+ul.widget-list{padding: 0px; margin: 0px;}
+	ul.widget-list li.widget{clear: both; padding: 0px 0px 30px;}
+		ul.widget-list li.widget ul{padding-left: 0px;}
+		ul.widget-list li.widget ul li{padding: 10px 0px; border-bottom: 1px dotted #ddd;}
+		ul.widget-list li.widget ul li:last-child{border-bottom: none;}
+		ul.widget-list li.widget ul li a{display: block; font-weight: lighter;}
+
+	h4.widgettitle{padding: 5px 0px; margin: 0px 0px 5px; text-transform: uppercase; font-size: 10px; font-weight: bold; color: #111; border-top: 3px solid #111; border-bottom: 1px solid #ccc;}
+
+
+	/*--------------------------------------------*/
+	/*- SEARCH -----------------------------------*/
+	.search-form{overflow: auto;}
+	.search-form h4{margin-bottom: 10px;}
+	.search-form input{line-height: normal;}
+	.search-form input[type=text]{float: left; width: 220px; padding: 6px; margin: 0px 8px 0px 0px; font-size: 12px; background: #fff; border: 1px solid #ccc; color: #595959;}
+	.search-form input[type=submit]{float: right; padding: 7px 4px; font-family: Arial, Helvetica, sans-serif; text-transform: uppercase; font-size: 10px; background: #111; border: none; color: #fff; font-weight: bold;}
+		.search-form input[type=submit]:hover{background: #333; color: #999; cursor: pointer;}
+
+
+	/*--------------------------------------------*/
+	/*- POPULAR/RECENT COMMENTS ------------------*/
+	.widget_recent_comments li{padding-left: 20px !important; background: url(images/layout/sprite.png) -488px -92px no-repeat;}
+	.widget_recent_comments li a{font-size: 11px; line-height: 16px; font-style: italic;}
+	
+	
+	/*--------------------------------------------*/
+	/*- POPULAR/RECENT POSTS ---------------------*/
+	ul.widget-list li.widget_popular_posts ul li{padding-left: 20px; background: url(images/layout/sprite.png) -489px -222px no-repeat;}
+		ul.widget-list li.widget_popular_posts ul li a{margin: 0px; padding: 0px; font-weight: lighter;}
+		ul.widget-list li.widget_popular_posts ul li h5{margin: 0px; padding: 0px; font-weight: normal; color: #999;}
+		
+		
+	/*--------------------------------------------*/
+	/*- LATEST VIDEO LIST ------------------------*/
+	.latest-videos div{margin: -5px 0px 10px;}
+	.latest-videos li{padding: 5px 0px 5px 20px !important; background: url(images/layout/sprite.png) -0px -427px no-repeat;}
+	.latest-videos li.selected, .latest-videos li:hover{background-color: #f1f1f1;}
+	
+
+	/*--------------------------------------------*/
+	/*- LATEST GALLERY ITEMS ---------------------*/
+	ul.widget-list li.latest_gallery ul li{float: left; margin: 10px 10px 0px 0px; width: 87px; height: 60px; padding: 0px; border: 3px solid #fff;}
+		ul.widget-list li.latest_gallery ul li:nth-child(3n+3){margin-right: 0px;}
+		ul.widget-list li.latest_gallery ul li a{display: block; width: 87px; height: 60px; overflow: hidden;}
+	
+	/*-------------------------------------------*/
+	/*- FLICKR ITEMS ----------------------------*/
+	#flickr_badge_wrapper{}
+	#flickr_badge_wrapper .flickr_badge_image{float: left; margin: 10px 10px 0px 0px; width: 75px; height: 60px; padding: 0px; border: 3px solid #fff;}
+	#flickr_badge_wrapper .flickr_badge_image:nth-child(3n+4){margin-right: 0px;}
+		#flickr_badge_wrapper .flickr_badge_image a{display: block; width: 75px; height: 60px; overflow: hidden;}
+	
+	/*--------------------------------------------*/
+	/*- TWITTER ----------------------------------*/
+	ul#twitter_update_list li{padding-left: 20px; background: url(images/layout/sprite.png) -485px -327px no-repeat;}
+	ul#twitter_update_list li a{display: inline !important;}
+	
+
+/*-------------------------------------------------------------------------------------------*/
+/*- FOOTER ----------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+#footer{color: #999;}
+#footer h4{color: #fff;}
+#footer a{color: #ccc;}
+#footer a:hover{color: #39c;}
+
+	/*-------------------------------------------*/
+	/*- FOOTER ITEMS ----------------------------*/
+	#footer ul{clear: both; margin-bottom: 0px; font-size: 12px;}
+		#footer ul li.column{float: left; display: block; width: 210px; margin-right: 20px;}
+			#footer ul li.column:last-child{margin-right: 0px;}
+
+	#footer ul li.column ul{margin-top: 10px;}
+		#footer ul li.column ul li{clear: both; padding: 5px 0px;}
+		#footer ul li.column ul li h4{padding: 0px; margin: 8px 0; font-weight: bold;}
+		#footer ul li.column ul li h5.date{margin: 0px;}
+		#footer ul li.column ul li a{color: #fff;}
+		#footer ul li.column ul li a:hover{color: #39c;}
+
+	.footer-text{padding: 10px 0px 0px; margin: 10px 0px 0px; border-top: 1px solid #333; overflow: hidden; font-size: 11px;}
+	.footer-text p{float: left;}
+	.footer-text .obox-credit{float: right;}
+
+/*-------------------------------------------------------------------------------------------*/
+/*- SOME STANDARD WORDPRESS PLUGIN/WIDGET STYLES --------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+	
+	/*--------------------------------------------*/
+	/*- SOCIAL BOOKMARKS -------------------------*/
+	ul.social-bookmarks li{float: left; margin: 0px 6px 10px 0px !important; padding: 0px  !important; border: none !important; list-style: none !important;}
+		ul.social-bookmarks li a{display: block; width: 16px; height: 16px; background: url(images/layout/social-icons/social-set.png)  no-repeat; text-indent: -9999px; overflow: hidden;}
+		
+			ul.social-bookmarks li a.rss 		{background-position: -0px -0px;}
+			ul.social-bookmarks li a.cargo 		{background-position: -24px -0px;}
+			ul.social-bookmarks li a.behance 	{background-position: -48px -0px;}
+			ul.social-bookmarks li a.twitter 	{background-position: -72px -0px;}
+			ul.social-bookmarks li a.facebook 	{background-position: -96px -0px;}
+			ul.social-bookmarks li a.redux 		{background-position: -120px -0px;}
+			ul.social-bookmarks li a.delicious 	{background-position: -144px -0px;}
+			ul.social-bookmarks li a.magnolia 	{background-position: -168px -0px;}
+			ul.social-bookmarks li a.tumblr 	{background-position: -192px -0px;}
+			ul.social-bookmarks li a.posterous 	{background-position: -216px -0px;}
+			ul.social-bookmarks li a.flickr 	{background-position: -240px -0px;}
+			ul.social-bookmarks li a.yahoo 		{background-position: -264px -0px;}
+			ul.social-bookmarks li a.stumble 	{background-position: -288px -0px;}
+			ul.social-bookmarks li a.reddit 	{background-position: -312px -0px;}
+			ul.social-bookmarks li a.linkedin 	{background-position: -336px -0px;}
+			ul.social-bookmarks li a.friendfeed {background-position: -360px -0px;}
+			ul.social-bookmarks li a.lastfm 	{background-position: -384px -0px;}
+			ul.social-bookmarks li a.wave 		{background-position: -408px -0px;}
+			ul.social-bookmarks li a.evernote 	{background-position: -432px -0px;}
+			ul.social-bookmarks li a.backtype 	{background-position: -456px -0px;}
+			ul.social-bookmarks li a.dropular 	{background-position: -480px -0px;}
+			ul.social-bookmarks li a.ffffound 	{background-position: -504px -0px;}
+			
+			/*-------------------------*/
+			/*- HOVER -----------------*/
+			ul.social-bookmarks li a.rss:hover 		{background-position: -0px -26px;}
+			ul.social-bookmarks li a.cargo:hover 	{background-position: -24px -26px;}
+			ul.social-bookmarks li a.behance:hover 	{background-position: -48px -26px;}
+			ul.social-bookmarks li a.twitter:hover 	{background-position: -72px -26px;}
+			ul.social-bookmarks li a.facebook:hover {background-position: -96px -26px;}
+			ul.social-bookmarks li a.redux:hover 	{background-position: -120px -26px;}
+			ul.social-bookmarks li a.delicious:hover{background-position: -144px -26px;}
+			ul.social-bookmarks li a.magnolia:hover {background-position: -168px -26px;}
+			ul.social-bookmarks li a.tumblr:hover 	{background-position: -192px -26px;}
+			ul.social-bookmarks li a.posterous:hover{background-position: -216px -26px;}
+			ul.social-bookmarks li a.flickr:hover 	{background-position: -240px -26px;}
+			ul.social-bookmarks li a.yahoo:hover 	{background-position: -264px -26px;}
+			ul.social-bookmarks li a.stumble:hover 	{background-position: -288px -26px;}
+			ul.social-bookmarks li a.reddit:hover 	{background-position: -312px -26px;}
+			ul.social-bookmarks li a.linkedin:hover {background-position: -336px -26px;}
+			ul.social-bookmarks li a.friendfeed:hover {background-position: -360px -26px;}
+			ul.social-bookmarks li a.lastfm:hover 	{background-position: -384px -26px;}
+			ul.social-bookmarks li a.wave:hover 	{background-position: -408px -26px;}
+			ul.social-bookmarks li a.evernote:hover {background-position: -432px -26px;}
+			ul.social-bookmarks li a.backtype:hover {background-position: -456px -26px;}
+			ul.social-bookmarks li a.dropular:hover {background-position: -480px -26px;}
+			ul.social-bookmarks li a.ffffound:hover {background-position: -504px -26px;}
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*- CLEARFIX --- * I prefer not to touch this code, I don't recommend you do so either, it works... so don't fix whats working ;) * -*/
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear
+{background: none; border: 0; clear: both; display: block; float: none; font-size: 0; list-style: none;	margin: 0; padding: 0; overflow: hidden; visibility: hidden; width: 0; height: 0;}
+
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after{clear: both; content: '.'; display: block; visibility: hidden; height: 0;}
+.clearfix{display: inline-block;}
+* html .clearfix{height: 1%;}
+.clearfix{display: block;}
+
